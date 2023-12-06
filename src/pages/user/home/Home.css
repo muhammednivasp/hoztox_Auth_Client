@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  background: linear-gradient(to left, #95dcf3, #f6d09f);
+}
+
+.content-container {
+  flex: 1;
+  padding: 2rem;
+}

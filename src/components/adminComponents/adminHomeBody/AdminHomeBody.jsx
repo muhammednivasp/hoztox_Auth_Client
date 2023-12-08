@@ -1,14 +1,14 @@
 import React from 'react';
-import './HomeBody.css';
+import './AdminHomeBody.css'
 
-function HomeBody() {
+function AdminHomeBody() {
   return (
-    <div className="home-page">
-      <header className="hero">
+    <div className="adminhome-page">
+      <header className="adminhero">
         <h1>Welcome to hozTox</h1>
         <p>Discover Amazing Content</p>
       </header>
-      <section className="main-content">
+      <section className="admin-main-content">
         <h2>Featured Content</h2>
         {/* Add your main content here */}
       </section>
@@ -16,4 +16,4 @@ function HomeBody() {
   );
 }
 
-export default HomeBody;
+export default AdminHomeBody;

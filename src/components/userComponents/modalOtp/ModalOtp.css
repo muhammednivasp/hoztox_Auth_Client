@@ -23,7 +23,7 @@ h2 {
   font-size: 18px;
   text-align: center;
   margin: 0 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #f3f0f0;
   border-radius: 4px;
   outline: none;
 }
@@ -44,6 +44,10 @@ button:hover {
 }
 
   .close-button span {
-    font-size: 30px;
-    color: #cd5656;
+    font-size: 40px;
+    color: #e92b2b;
+  }
+
+  .otp-container {
+    background-color: rgb(141, 141, 144);
   }

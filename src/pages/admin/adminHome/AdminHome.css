@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .admin-app-container {
+    display: flex;
+    flex-direction: column;
+    /* max-height: 90vh; */
+    height:100vh;
+    background: linear-gradient(to left, #c0bbb5, #8a727f);
+  }
+  
+  
+  .content-container {
+    flex: 1;
+    padding: 2rem;
+  }
+  

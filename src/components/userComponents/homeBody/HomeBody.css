@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(to left, #95dcf3, #f6d09f);
+
 }
 
 .hero {

@@ -1,0 +1,112 @@
+.admin-top {
+    margin: 20px auto;
+    max-width: 1020px;
+    max-height: 95vh;
+}
+
+.create-event-form {
+    width: 800px;
+    max-width: 1020px;
+    max-height: 95vh;
+    /* margin: 20px auto; */
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #073a09;
+}
+
+.error {
+    color: red;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .create-event-form {
+        width: 600px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .create-event-form {
+        width: 500px;
+    }
+}
+
+@media (max-width: 920px) {
+    .create-event-form {
+        width: 400px;
+    }
+}
+
+@media (max-width: 700px) {
+    .create-event-form {
+        width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-top {
+        margin: 20px 20px auto auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .create-event-form {
+        width: 240px;
+    }
+}
+
+@media (max-width: 400px) {
+    .create-event-form {
+        width: 200px;
+    }
+}
+
+@media (max-width: 360px) {
+    .create-event-form {
+        width: 160px;
+        margin: 20px 10px auto auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .create-event-form {
+        width: 140px;
+        margin: 20px 5px auto auto;
+    }
+}
+
+@media (max-width: 290px) {
+    .create-event-form {
+        width: 120px;
+        margin: 20px 1px auto auto;
+    }
+}

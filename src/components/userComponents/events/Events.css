@@ -1,0 +1,105 @@
+.event-top {
+  margin-top: 5vh;
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-bar {
+  cursor: pointer;
+  padding: 10px;
+  background: linear-gradient(to left, #a9a4a4, #faf9f9);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 400px;
+  text-align: center;
+}
+
+.event-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: linear-gradient(to left, #c6c6c0, #f9f9f7);
+  padding: 20px;
+  border-radius: 5px;
+  width: 820px;
+  min-height: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+.description {
+  max-height: 150px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.description::-webkit-scrollbar {
+  width: 12px;
+}
+
+.description::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.video-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close-video {
+  position: absolute;
+  bottom: 13vh;
+  background-color: #bd1313;
+  color: #fdfbfb;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 60%;
+}
+
+
+
+@media (max-width: 490px) {
+  .event-bar {
+    width: 220px;
+  }
+}

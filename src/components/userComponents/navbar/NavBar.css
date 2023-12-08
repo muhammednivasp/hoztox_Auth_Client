@@ -1,20 +1,33 @@
+body {
+  margin: 0; 
+}
+
 .navbar {
-  background-color: #69a7ba;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 1rem;
+  background-color: #5a91a2;
+  /* background-color: #c29a9a; */
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 }
+
 
 .logo {
   font-size: 1.5rem;
+  padding-left:2rem;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
+  padding-right: 2rem;
 }
 
 .nav-links li {
@@ -23,10 +36,10 @@
 }
 
 .logout {
-color: red;
-border: 2px solid transparent;
-border-radius: 4px;
-padding: 0.5rem;
+  color: rgb(205, 20, 20);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 1rem;
 }
 
 .logout:hover {
@@ -36,7 +49,23 @@ padding: 0.5rem;
 }
 
 .usershow {
-  color:rgb(218, 247, 161);
+  color: rgb(218, 247, 161);
   max-width: 6rem;
   overflow: hidden;
+}
+
+@media (max-width: 490px) {
+.navbar {
+    padding:0.5rem;
+  }
+  .logo {
+    font-size: 1rem;
+    padding-left:0.5rem;
+  }
+  
+  .nav-links {
+    gap: 0.1rem;
+    padding-right: 1rem;
+  }
+  
 }

@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import './UserLogin.css'
+import './AdminLogin.css'
 import { useFormik } from 'formik';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 import { loginValidation } from '../../../yupSchemas/YupUserLogin';
-import { userLogin } from '../../../services/UserApi';
+import { adminLogin } from '../../../services/AdminApi';
 
 const initialValues = {
   email: '',
   password: ''
 }
 
-const UserLogin = () => {
+const AdminLogin = () => {
 
   const Navigate = useNavigate()
 
@@ -20,20 +20,20 @@ const UserLogin = () => {
     initialValues: initialValues,
     validationSchema: loginValidation,
     onSubmit: (values) => {
+        console.log(values);
       try {
         console.log(values, 'val');
-        userLogin(values).then(async (res) => {
+        adminLogin(values).then(async (res) => {
           console.log(res.data)
-          localStorage.setItem("user", res.data.token);
+          localStorage.setItem("admin", res.data.token);
           toast.success(res.data.message)
           setTimeout(() => {
-            Navigate('/home');
+            Navigate('/admin/home');
           }, 2000);
         }).catch((err) => {
           console.log(err);
-          toast.error(err.response.data.message)
+          toast.error(err?.response?.data?.message)
         })
-        // console.log(user,'user');
 
       } catch (error) {
         console.log(error);
@@ -44,10 +44,10 @@ const UserLogin = () => {
 
 
   return (
-    <div className='full'>
-      <div className="container">
+    <div className='admin-full'>
+      <div className="admin-container">
         <form className="registration-form" onSubmit={handleSubmit}>
-          <h2 style={{ color: 'blue' }}>Login</h2>
+          <h2 style={{ color: 'blue' }}>Admin Login</h2>
 
           <label htmlFor="email">Email</label>
           <input
@@ -74,17 +74,10 @@ const UserLogin = () => {
           {errors.password && touched.password && <small>{errors.password}</small>}
 
           <button type="submit">Login</button>
-          <h3>
-            Not a member!{' '}
-            <Link to={'/register'}
-              className='link'>
-              Register Now
-            </Link>
-          </h3>
         </form>
       </div>
     </div>
   );
 };
 
-export default UserLogin;
+export default AdminLogin;

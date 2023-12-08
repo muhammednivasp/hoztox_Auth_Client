@@ -31,6 +31,12 @@ const userGet = () => {
   });
 };
 
+const eventGet = () => {
+  return userAxios.get("/eventget", {
+    withCredentials: true,
+  });
+};
+
 export {
-    userLogin,userSignup,verifyOtp,isUserAuth,userGet
+    userLogin,userSignup,verifyOtp,isUserAuth,userGet,eventGet
 }

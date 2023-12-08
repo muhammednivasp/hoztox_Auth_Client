@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .admin-full {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    /* background: linear-gradient(to left, #f39821, #6DD5FA); */
+    background: linear-gradient(to left, #c0bbb5, #8a727f);
+  }
+  
+  .admin-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+  }
+  
+  .registration-form {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .registration-form:hover {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .link {
+    color: red;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    color: blue;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #cfcece, #e0e0e0);
+    transition: background 0.3s ease;
+  }
+  
+  input:focus {
+    background: linear-gradient(to right, #e0e0e0, #d3d3d3);
+  }
+  
+  small {
+    display: block;
+    color: red;
+    height: 14px;
+    margin-top: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+  
+  button:hover {
+    background-color: #27ae60;
+    transition: background-color 0.3s ease;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  h3 a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  @media (min-width: 601px) {
+    .admin-container {
+      max-width: 20%;
+    }
+  }

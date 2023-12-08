@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { isUserAuth } from "../../services/UserApi.js";
+import { isAdminAuth } from "../../services/AdminApi.js";
 import toast from "react-hot-toast";
 
 export default function PrivateRoutes({ role, route }) {
@@ -10,7 +11,7 @@ export default function PrivateRoutes({ role, route }) {
             isUserAuth()
                 .then((res) => {
                     setVerify(res.data.success);
-                    console.log(res.data.success);
+                    console.log(res.data.success,'kkkyyyyy');
                 })
                 .catch((err) => {
                     setVerify(false);
@@ -19,17 +20,18 @@ export default function PrivateRoutes({ role, route }) {
                     console.log(err);
                 });
         }
-        // else if (role === "admin") {
-        //     isAdminAuth()
-        //         .then((res) => {
-        //             setVerify(res.data.success);
-        //         })
-        //         .catch((err) => {
-        //             setVerify(false);
-        //             localStorage.removeItem("admin");
-        //             console.log(err);
-        //         });
-        // }
+        else if (role === "admin") {
+            isAdminAuth()
+                .then((res) => {
+                    setVerify(res.data.success);
+                })
+                .catch((err) => {
+                    setVerify(false);
+                    localStorage.removeItem("admin");
+                    toast.error(err.response.data.message);
+                    console.log(err);
+                });
+        }
 
     }, []);
     if (!(localStorage.getItem(role))) {

@@ -20,7 +20,7 @@ const [user,setUser] = useState('')
   }
 
   const handleHome = ()=>{
-    Navigate('/home')
+    Navigate('/')
   }
   return (
     <nav className="navbar">
@@ -28,7 +28,7 @@ const [user,setUser] = useState('')
       <ul className="nav-links">
         <li onClick={handleHome}>Home</li>
         <li className='usershow'>{user}</li>
-        <li className='logout' onClick={handeLogout}>LogOut</li>
+        <li className='logout' onClick={()=>handeLogout()}>LogOut</li>
       </ul>
     </nav>
   );

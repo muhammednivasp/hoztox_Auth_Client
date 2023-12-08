@@ -51,7 +51,7 @@ const Navigate = useNavigate()
       <div className="close-button" onClick={closeModal}>
         <span>&times;</span>
       </div>
-      <h2>Enter OTP</h2>
+      <h2 style={{color:'white'}}>Enter OTP</h2>
       <form onSubmit={handleOtpSubmit}>
         <div className="otp-input-container">
           {[0, 1, 2, 3].map((index) => (

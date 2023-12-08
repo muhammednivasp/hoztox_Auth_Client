@@ -1,0 +1,202 @@
+.user-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.user-item {
+    margin-bottom: 10px;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.user-info {
+    display: flex;
+    background-color: #eff3ef;
+    height: 4rem;
+    width: 70vw;
+    max-width: 800px;
+    margin: 2px;
+    margin-right: 2px;
+    justify-content: space-around;
+}
+
+.info-cell {
+    overflow: hidden;
+}
+
+.cell-content {
+    margin: 1rem;
+    justify-content: center;
+    font-size: medium;
+}
+
+.block-button {
+    margin: 1rem 0;
+    height: 2.25rem;
+    width: 100px;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background-color: #3e54e5;
+    color: white;
+    padding: 10px;
+}
+
+
+@media (max-width: 1190px) {
+    .user-info {
+        width: 720px;
+    }
+
+    .block-button {
+        width: 80px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .user-info {
+        width: 680px;
+    }
+
+    .block-button {
+        width: 70px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .user-info {
+        width: 600px;
+    }
+
+    .block-button {
+        width: 60px;
+    }
+}
+
+@media (max-width: 970px) {
+    .user-info {
+        width: 500px;
+    }
+
+    .block-button {
+        width: 60px;
+    }
+}
+
+@media (max-width: 800px) {
+    .user-info {
+        width: 480px;
+    }
+
+    .block-button {
+        width: 60px;
+    }
+}
+
+@media (max-width: 740px) {
+    .user-info {
+        width: 400px;
+    }
+
+    .block-button {
+        width: 60px;
+    }
+}
+
+@media (max-width: 650px) {
+    .user-info {
+        width: 420px;
+    }
+
+    .block-button {
+        width: 60px;
+    }
+
+    .cell-content {
+        font-size: small;
+    }
+
+    .user-list {
+        align-items: end;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 560px) {
+    .user-info {
+        width: 380px;
+    }
+
+    .block-button {
+        width: 60px;
+    }
+}
+
+@media (max-width: 500px) {
+    .user-info {
+        width: 320px;
+    }
+
+    .user-list {
+        margin-top: 20px;
+
+    }
+
+    .block-button {
+        width: 60px;
+        padding: 1px;
+        height: 2rem;
+        margin: 0.5rem 0;
+
+    }
+
+    .cell-content {
+        font-size: x-small;
+    }
+}
+
+@media (max-width: 440px) {
+    .user-info {
+        width: 280px;
+        height: 2rem;
+    }
+
+    .block-button {
+        width: 60px;
+        padding: 1px;
+        height: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    .block-button {
+        width: 50px;
+    }
+
+}
+
+@media (max-width: 395px) {
+    .user-info {
+        width: 250px;
+
+    }
+
+    .user-list {
+        margin-right: 2px;
+    }
+}
+
+@media (max-width: 355px) {
+    .user-info {
+        width: 240px;
+    }
+
+    .user-list {
+        margin-right: 1px;
+    }
+
+
+}

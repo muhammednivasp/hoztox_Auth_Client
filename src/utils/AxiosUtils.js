@@ -2,7 +2,7 @@ import axios from "axios";
 import Constants from "../constants/Constants.js";
 const { UserBaseURL, AdminBaseURL } = Constants
 
-console.log(UserBaseURL,"kkkkk")
+console.log(UserBaseURL, "kkkkk")
 
 const createAxiosClient = (baseURL) => {
   const client = axios.create({
@@ -33,4 +33,4 @@ adminAxios.interceptors.request.use(async (req) => {
   return modifiedReq;
 });
 
-export { userAxios , adminAxios };
+export { userAxios, adminAxios };

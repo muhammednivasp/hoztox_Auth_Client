@@ -11,7 +11,6 @@ import Layout from '../components/userComponents/layout/Layout.jsx'
 export default function UserRoutes() {
     return (
         <Routes>
-
             <Route path='*' element={<NotFound />} />
 
             <Route element={<PublicRoutes role={"user"} route={"/home"} />}>
@@ -24,8 +23,6 @@ export default function UserRoutes() {
                     <Route index element={<Home />} />
                 </Route>
             </Route>
-            {/* <Route path='/Home' element={<Home/>} /> */}
-
         </Routes>
 
     )

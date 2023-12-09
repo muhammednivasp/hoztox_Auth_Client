@@ -10,35 +10,31 @@ export default function PrivateRoutes({ role, route }) {
         if (role === "user") {
             isUserAuth()
                 .then((res) => {
-                    setVerify(res.data.success);
-                    console.log(res.data.success,'kkkyyyyy');
+                    setVerify(res?.data?.success);
                 })
                 .catch((err) => {
                     setVerify(false);
                     localStorage.removeItem("user");
-                    toast.error(err.response.data.message);
-                    console.log(err);
+                    toast.error(err?.response?.data?.message || 'Authentication Failed');
                 });
         }
         else if (role === "admin") {
             isAdminAuth()
                 .then((res) => {
-                    setVerify(res.data.success);
+                    setVerify(res?.data?.success);
                 })
                 .catch((err) => {
                     setVerify(false);
                     localStorage.removeItem("admin");
-                    toast.error(err.response.data.message);
-                    console.log(err);
+                    toast.error(err?.response?.data?.message || 'Authentication Failed');
                 });
         }
 
-    }, []);
+    }, [role]);
     if (!(localStorage.getItem(role))) {
         toast.error('Please Login');
         return <Navigate to={route} />;
     }
-    //   return <Navigate to={route} />;
 
     if (verify == null) return;
     return verify ? <Outlet /> : <Navigate to={route} />;

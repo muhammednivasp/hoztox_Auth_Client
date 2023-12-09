@@ -8,7 +8,7 @@ import UserRoutes from './routes/UserRoutes.jsx'
 function App() {
   return (
     <BrowserRouter>
-    <Toaster
+      <Toaster
         position="top-center"
         reverseOrder={false}
       />

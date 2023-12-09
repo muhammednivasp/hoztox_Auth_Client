@@ -1,5 +1,5 @@
 body {
-  margin: 0; 
+  margin: 0;
 }
 
 .navbar {
@@ -9,7 +9,6 @@ body {
   width: 100%;
   padding: 1rem;
   background-color: #5a91a2;
-  /* background-color: #c29a9a; */
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -20,7 +19,7 @@ body {
 
 .logo {
   font-size: 1.5rem;
-  padding-left:2rem;
+  padding-left: 2rem;
 }
 
 .nav-links {
@@ -55,17 +54,18 @@ body {
 }
 
 @media (max-width: 490px) {
-.navbar {
-    padding:0.5rem;
+  .navbar {
+    padding: 0.5rem;
   }
+
   .logo {
     font-size: 1rem;
-    padding-left:0.5rem;
+    padding-left: 0.5rem;
   }
-  
+
   .nav-links {
     gap: 0.1rem;
     padding-right: 1rem;
   }
-  
+
 }

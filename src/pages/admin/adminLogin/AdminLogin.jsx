@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './AdminLogin.css'
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
@@ -20,23 +20,18 @@ const AdminLogin = () => {
     initialValues: initialValues,
     validationSchema: loginValidation,
     onSubmit: (values) => {
-        console.log(values);
       try {
-        console.log(values, 'val');
         adminLogin(values).then(async (res) => {
-          console.log(res.data)
           localStorage.setItem("admin", res.data.token);
-          toast.success(res.data.message)
+          toast.success(res?.data?.message || 'Login Success')
           setTimeout(() => {
             Navigate('/admin/home');
           }, 2000);
         }).catch((err) => {
-          console.log(err);
-          toast.error(err?.response?.data?.message)
+          toast.error(err?.response?.data?.message || 'Error')
         })
 
       } catch (error) {
-        console.log(error);
         toast.error('Error')
       }
     }

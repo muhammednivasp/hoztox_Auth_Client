@@ -14,45 +14,49 @@ body {
 }
 
 .container {
-    text-align: center;
+  text-align: center;
+}
+
+.error-code {
+  font-size: 120px;
+  font-weight: bold;
+  color: rgb(208, 35, 20);
+  animation: shake 2s ease infinite;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(-50px);
   }
-  
-  .error-code {
-    font-size: 120px;
-    font-weight: bold;
-    color: rgb(208, 35, 20);
-    animation: shake 2s ease infinite;
+
+  30%,
+  70% {
+    transform: translateX(0);
   }
-  
-  @keyframes shake {
-    0%, 100% {
-      transform: translateX(-50px);
-    }
-    30%, 70% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(50px);
-    }
+
+  50% {
+    transform: translateX(50px);
   }
-  
-  .error-message {
-    font-size: 24px;
-    color: #f0f1f3;
-  }
-  
-  .home-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .home-link:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+.error-message {
+  font-size: 24px;
+  color: #f0f1f3;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.home-link:hover {
+  background-color: #0056b3;
+}

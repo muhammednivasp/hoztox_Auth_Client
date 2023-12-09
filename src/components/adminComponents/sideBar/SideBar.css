@@ -1,16 +1,13 @@
-/* SideBar.css */
 .sidebar {
     width: 180px;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    /* background-color: #faf5f5; */
     background: linear-gradient(to left, #f6f5f5, #878786);
     padding-top: 20px;
     transition: width 0.3s ease;
 }
-
 
 .sidebar:hover {
     width: 250px;
@@ -63,7 +60,6 @@
 
 .sidebar-links li.selected {
     color: #453ff1;
-    /* Change to the desired color for selected item */
 }
 
 /* Responsive Styles */
@@ -102,6 +98,7 @@
         width: 160px;
     }
 }
+
 @media (max-width: 330px) {
     .sidebar {
         width: 80px;

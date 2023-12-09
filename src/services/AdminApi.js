@@ -1,4 +1,4 @@
-import {adminAxios} from '../utils/AxiosUtils.js'
+import { adminAxios } from '../utils/AxiosUtils.js'
 
 const adminLogin = (value) => {
   return adminAxios.post("/login", value, {
@@ -19,18 +19,18 @@ const usersList = () => {
 };
 
 const userHandle = (user) => {
-  return adminAxios.patch("/userhandle",user,{
+  return adminAxios.patch("/userhandle", user, {
     withCredentials: true,
   });
 };
 
 const eventCreation = (values) => {
-  return adminAxios.post("/eventcreation",values,{
+  return adminAxios.post("/eventcreation", values, {
     withCredentials: true,
   });
 };
 
 
 export {
-    adminLogin,isAdminAuth,usersList,userHandle,eventCreation
+  adminLogin, isAdminAuth, usersList, userHandle, eventCreation
 }

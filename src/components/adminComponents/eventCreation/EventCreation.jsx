@@ -17,14 +17,11 @@ const EventCreation = () => {
         validationSchema: EventValidation,
         onSubmit: (values) => {
             eventCreation(values).then((data) => {
-                console.log(data);
                 toast.success('Event Created Successfully')
                 formik.resetForm();
             }).catch((err) => {
-                console.log(err);
-                toast.error(err.response.data.message)
+                toast.error(err.response.data.message || 'Event Creation Failed')
             })
-            console.log('Event created:', values);
         },
     });
 

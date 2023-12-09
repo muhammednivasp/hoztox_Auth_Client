@@ -5,25 +5,20 @@ import toast from 'react-hot-toast'
 import { usersList, userHandle } from '../../../services/AdminApi';
 
 const UserList = () => {
-
     const [userDatas, SetUserDatas] = useState([])
 
     useEffect(() => {
         usersList().then((datas) => {
-            console.log(datas);
             SetUserDatas(datas?.data?.Users)
         }).catch((err) => {
-            console.log(err);
             toast.error('Error')
         })
     }, [])
 
-    const handleBlock = (item, status) => {
+    const handleBlock = (item) => {
         userHandle(item).then((datas) => {
-            console.log(datas)
-             SetUserDatas(datas.data.Users)      
+            SetUserDatas(datas?.data?.Users)
         }).catch((err) => {
-            console.log(err);
             toast.error('Failed')
         })
     }
@@ -51,7 +46,7 @@ const UserList = () => {
                                     </div>
                                     <div className="info-cell">
                                         <div style={{ alignItems: 'center', justifyContent: 'center', padding: 2 }}>
-                                            {(user.block) ? <button className="block-button" onClick={() => handleBlock(user, 'allow')}>Allow</button> : <button className="block-button" onClick={() => handleBlock(user, 'block')}>Block</button>}
+                                            {(user.block) ? <button className="block-button" onClick={() => handleBlock(user)}>Allow</button> : <button className="block-button" onClick={() => handleBlock(user)}>Block</button>}
                                         </div>
                                     </div>
                                 </div>

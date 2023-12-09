@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import './ModalOtp.css';
 import toast from 'react-hot-toast';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { verifyOtp } from '../../../services/UserApi';
 
 
 function ModalOtp({ closeModal, user }) {
-
-const Navigate = useNavigate()
+  const Navigate = useNavigate()
 
   const [otpValues, setOtpValues] = useState(['', '', '', '']);
-  const [userId,SetUserId] = useState(user)
+  const [userId, SetUserId] = useState(user)
+  SetUserId(user)
 
   const handleOtpChange = (index, value) => {
     if (/^\d$/.test(value)) {
@@ -28,18 +28,14 @@ const Navigate = useNavigate()
     } else {
       try {
         const otpCode = otpValues.join('');
-        console.log('Submitted OTP:', otpCode);
-
-        const verify = await verifyOtp({ otp: otpCode, userId: userId });
-        console.log(verify);
+        await verifyOtp({ otp: otpCode, userId: userId });
         toast.success('Verification Success');
         setTimeout(() => {
-        closeModal();
+          closeModal();
           Navigate('/');
         }, 2000);
 
       } catch (error) {
-        console.log(error);
         toast.error('OTP Does Not Match');
         setOtpValues(['', '', '', '']);
       }
@@ -51,7 +47,7 @@ const Navigate = useNavigate()
       <div className="close-button" onClick={closeModal}>
         <span>&times;</span>
       </div>
-      <h2 style={{color:'white'}}>Enter OTP</h2>
+      <h2 style={{ color: 'white' }}>Enter OTP</h2>
       <form onSubmit={handleOtpSubmit}>
         <div className="otp-input-container">
           {[0, 1, 2, 3].map((index) => (

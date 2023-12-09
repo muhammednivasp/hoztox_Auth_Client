@@ -10,9 +10,8 @@ function AdminRoutes() {
 
     return (
         <Routes>
-
             <Route path='*' element={<NotFound />} />
-
+            
             <Route element={<PublicRoutes role={"admin"} route={"/admin/home"} />}>
                 <Route path='/' element={<AdminLogin />} />
             </Route>
@@ -20,7 +19,6 @@ function AdminRoutes() {
             <Route element={<PrivateRoutes role={"admin"} route={"/admin"} />}>
                 <Route path="/home" element={<AdminHome />} />
             </Route>
-
         </Routes>
 
     )

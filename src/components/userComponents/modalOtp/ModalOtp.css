@@ -43,11 +43,11 @@ button:hover {
   background-color: #45a049;
 }
 
-  .close-button span {
-    font-size: 40px;
-    color: #e92b2b;
-  }
+.close-button span {
+  font-size: 40px;
+  color: #e92b2b;
+}
 
-  .otp-container {
-    background-color: rgb(141, 141, 144);
-  }
+.otp-container {
+  background-color: rgb(141, 141, 144);
+}

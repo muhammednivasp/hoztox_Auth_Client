@@ -13,7 +13,7 @@ const userSignup = (value) => {
 };
 
 const verifyOtp = (value) => {
-  console.log(value,'value');
+  console.log(value, 'value');
   return userAxios.post("/verify", value, {
     withCredentials: true,
   });
@@ -38,5 +38,5 @@ const eventGet = () => {
 };
 
 export {
-    userLogin,userSignup,verifyOtp,isUserAuth,userGet,eventGet
+  userLogin, userSignup, verifyOtp, isUserAuth, userGet, eventGet
 }

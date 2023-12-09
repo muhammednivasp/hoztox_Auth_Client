@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import './Events.css';
+
 import { eventGet } from '../../../services/UserApi';
-import ReactPlayer from 'react-player';
+import EventModal from './EventModal';
+import Loader from '../../loader/Loader';
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [events, setEvents] = useState([]);
-  const [stream, setStream] = useState(false);
-  const [url, setUrl] = useState('');
+  const [loader, setLoader] = useState(true);
+
 
   useEffect(() => {
     eventGet()
       .then((datas) => {
-        console.log(datas, 'jjjj');
-        setEvents(datas.data.Events);
+        setEvents(datas?.data?.Events);
+        setLoader(false)
       })
       .catch((err) => {
         console.log(err);
@@ -52,18 +54,10 @@ const Events = () => {
     setSelectedEvent(event);
   };
 
-  const closeEventDetails = () => {
-    setStream(false);
-    setSelectedEvent(null);
-  };
-
-  const handleStartEvent = (url) => {
-    setUrl(url);
-    closeEventDetails();
-    setStream(true);
-  };
-
+  
   return (
+    <>
+    {loader?<Loader/> : (
     <div className='event-top'>
       <h2 style={{ color: 'white' }}>Events</h2>
       <div className='event-list'>
@@ -74,54 +68,29 @@ const Events = () => {
             onClick={() => openEventDetails(event)}
           >
             <h3>{event.eventName}</h3>
-            <p>
-              {timesetter(event.eventDateTime.toLocaleString()).formattedDate},{' '}
-              {timesetter(event.eventDateTime.toLocaleString()).formattedTime}
-            </p>
+            {isEventInPast(event.eventDateTime.toLocaleString()) ? (
+              <p style={{ color: 'red' }}>
+                {timesetter(event.eventDateTime.toLocaleString()).formattedDate},{' '}
+                {timesetter(event.eventDateTime.toLocaleString()).formattedTime}  {'('}<span style={{ color: 'blue' }}>{'ongoing'}</span>{')'}
+              </p>
+            ) : (
+              <p>
+                {timesetter(event.eventDateTime.toLocaleString()).formattedDate},{' '}
+                {timesetter(event.eventDateTime.toLocaleString()).formattedTime}
+              </p>
+            )}
+
           </div>
         ))}
 
         {selectedEvent && (
-          <div className='event-modal'>
-            <div className='modal-content'>
-              <span className='close' onClick={closeEventDetails}>
-                &times;
-              </span>
-              <h2 style={{ color: 'blue' }}>{selectedEvent.eventName}</h2>
-              <p>
-                Date and Time:{' '}
-                {timesetter(selectedEvent.eventDateTime.toLocaleString()).formattedDate},{' '}
-                {timesetter(selectedEvent.eventDateTime.toLocaleString()).formattedTime}
-              </p>
-              <div>
-                <label>Description: </label>
-                <p className='description'>{selectedEvent.eventDescription}</p>
-              </div>
-              {isEventInPast(selectedEvent.eventDateTime.toLocaleString()) && (
-                <button onClick={() => handleStartEvent(selectedEvent.eventUrl)}>
-                  Start Event
-                </button>
-              )}
-            </div>
-          </div>
+          <EventModal selectedEvent={selectedEvent} timesetter={timesetter} setSelectedEvent={openEventDetails} isEventInPast={isEventInPast} />
         )}
-        {stream && (
-          <div className='video-modal'>
-            <ReactPlayer
-              controls
-              url={url}
-              width='60%'
-              height='60%'
-              style={{ borderRadius: '5px' }}
-              playing={true}
-            />
-            <button className='close-video' onClick={closeEventDetails}>
-              Close Video
-            </button>
-          </div>
-        )}
+
       </div>
     </div>
+  )}
+  </>
   );
 };
 

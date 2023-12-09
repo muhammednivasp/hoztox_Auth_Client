@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './UserLogin.css'
 import { useFormik } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
@@ -21,22 +21,16 @@ const UserLogin = () => {
     validationSchema: loginValidation,
     onSubmit: (values) => {
       try {
-        console.log(values, 'val');
         userLogin(values).then(async (res) => {
-          console.log(res.data)
           localStorage.setItem("user", res.data.token);
-          toast.success(res.data.message)
+          toast.success(res?.data?.message || 'Login Success')
           setTimeout(() => {
             Navigate('/home');
           }, 2000);
         }).catch((err) => {
-          console.log(err);
-          toast.error(err.response.data.message)
+          toast.error(err?.response?.data?.message || 'Login Failed')
         })
-        // console.log(user,'user');
-
       } catch (error) {
-        console.log(error);
         toast.error('Error')
       }
     }

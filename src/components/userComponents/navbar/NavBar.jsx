@@ -6,20 +6,19 @@ import { userGet } from '../../../services/UserApi';
 
 function NavBar() {
   const Navigate = useNavigate()
-const [user,setUser] = useState('')
-  useEffect(()=>{
-    userGet().then((data)=>{
-      console.log(data);
-      setUser(data.data.username)
-    })
-  },[])
+  const [user, setUser] = useState('')
+  useEffect(() => {
+    userGet().then((data) => {
+      setUser(data?.data?.username)
+    }).catch((err) => console.log(err))
+  }, [])
 
-  const handeLogout = ()=>{
+  const handeLogout = () => {
     localStorage.removeItem('user')
     Navigate('/')
   }
 
-  const handleHome = ()=>{
+  const handleHome = () => {
     Navigate('/')
   }
   return (
@@ -28,7 +27,7 @@ const [user,setUser] = useState('')
       <ul className="nav-links">
         <li onClick={handleHome}>Home</li>
         <li className='usershow'>{user}</li>
-        <li className='logout' onClick={()=>handeLogout()}>LogOut</li>
+        <li className='logout' onClick={() => handeLogout()}>LogOut</li>
       </ul>
     </nav>
   );
